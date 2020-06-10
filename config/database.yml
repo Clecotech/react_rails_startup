@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
+  password: postgres
+
+development:
+  <<: *default
+  database: react_survey_development
+test:
+  <<: *default
+  database: react_recipe_text
+production:
+  <<: *default
+  database: react_survey_prodution
+  username: postgres
+  password: postgres
